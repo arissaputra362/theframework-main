@@ -1,0 +1,18 @@
+{
+  "name": "bstar/theframework",
+  "authors": [
+    {
+      "name": "arissaputra362",
+      "email": "arissaputra362@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "app\\": "./"
+    }
+  },
+  "require": {
+    "vlucas/phpdotenv": "^5.4",
+    "ti2018b/the-framework-app": "v1.0.3"
+  }
+}
