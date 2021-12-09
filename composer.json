@@ -13,6 +13,6 @@
   },
   "require": {
     "vlucas/phpdotenv": "^5.4",
-    "ti2018b/the-framework-app": "v1.0.3"
+    "ti2018b/the-framework-app": "^1.0.3"
   }
 }
