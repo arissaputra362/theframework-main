@@ -10,8 +10,6 @@ Custom framework created for education.
 
 1. XAMPP
 
-----
-
 ## How to Install
 
 1. Download the archive or clone the project using git
