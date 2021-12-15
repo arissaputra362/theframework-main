@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use ti2018b\phpmvc\Model;
+use ti2018b\phpmvc\db\DbModel;
 
 /**
  * Class ContactForm
@@ -10,28 +10,52 @@ use ti2018b\phpmvc\Model;
  * @author Aris Saputra <arissaputra362@gmail.com>
  * @package app\models
  */
-class ContactForm extends Model
+class ContactForm extends DbModel
 {
-    public string $subject = '';
-    public string $email = '';
-    public string $body = '';
+    // Form membutuhkan field username dan nim
+    public string $username = '';
+    public string $nim = '';
 
+    // tabel
+    public function tableName(): string
+    {
+        return 'data_user';
+    }
+
+    // set field primary key
+    public function primaryKey(): string
+    {
+        return 'id';
+    }
+
+    // inisialisasi rules untuk tiap field
     public function rules(): array
     {
         return [
-            'subject' => [self::RULE_REQUIRED],
-            'email' => [self::RULE_REQUIRED],
-            'body' => [self::RULE_REQUIRED]
+            'username' => [self::RULE_REQUIRED],
+            'nim' => [self::RULE_REQUIRED]
         ];
     }
 
+    // inisialisasi label
     public function labels(): array
     {
         return [
-            'subject' => 'Enter your subject',
-            'email'   => 'Enter your email',
-            'body'    => 'Body'
+            'username' => 'Masukkan username',
+            'nim'   => 'Masukkan nim'
         ];
+    }
+
+    // fungsi simpan
+    public function save()
+    {
+        return parent::save();
+    }
+
+    // array atibutr
+    public function attributes(): array
+    {
+        return ['username', 'nim'];
     }
 
     public function send()

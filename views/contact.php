@@ -13,9 +13,8 @@ $this->title = 'Contact';
 
 <?php $form = \ti2018b\phpmvc\form\Form::begin('', 'post') ?>
 
-<?php echo $form->field($model, 'subject') ?>
-<?php echo $form->field($model, 'email') ?>
-<?php echo new TextareaField($model, 'body') ?>
+<?php echo $form->field($model, 'username') ?>
+<?php echo $form->field($model, 'nim') ?>
 <button type="submit" class="btn btn-primary">Submit</button>
 
 <?php \ti2018b\phpmvc\form\Form::end(); ?>

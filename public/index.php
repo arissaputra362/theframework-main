@@ -1,6 +1,7 @@
 <?php
 
 use Dotenv\Dotenv;
+use app\controllers\TestController;
 use app\models\User;
 use ti2018b\phpmvc\Application;
 use app\controllers\AuthController;
@@ -33,5 +34,11 @@ $app->router->get('/register', [AuthController::class, 'register']);
 $app->router->post('/register', [AuthController::class, 'register']);
 $app->router->get('/logout', [AuthController::class, 'logout']);
 $app->router->get('/profile', [AuthController::class, 'profile']);
+$app->router->get('/coba', [AuthController::class, 'test']);
+
+// '/test' => route baru 
+// TestController => nama class controller
+// 'index' => function yang dieksekusi di dalam class controller
+$app->router->get('/test', [TestController::class, 'index']);
 
 $app->run();

@@ -20,7 +20,7 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->registerMiddleware(new AuthMiddleware(['profile']));
+        $this->registerMiddleware(new AuthMiddleware(['profile', 'test']));
     }
     public function login(Request $request, Response $response)
     {
@@ -73,5 +73,15 @@ class AuthController extends Controller
     public function profile()
     {
         return $this->render('profile');
+    }
+
+    public function test()
+    {
+        $params = [
+            'name' => "Admin, ini page coba yang dibatasi "
+        ];
+
+        // Eksekusi code di sini
+        return $this->render('test', $params);
     }
 }
